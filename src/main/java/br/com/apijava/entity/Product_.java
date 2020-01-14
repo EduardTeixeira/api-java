@@ -13,6 +13,20 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({ "price", "image", "brand", "id", "title", "reviewScore" })
 public class Product_ {
 
+//	{ 
+//		"meta" : { 
+//		"número_página" : 1 ,
+//		"tamanho_página" : 100
+//		} ,
+//		"produtos" : [ 
+//		{ 
+//		"price" : 1699.0 ,
+//		"image" : "http://challenge-api.luizalabs.com/images/1bf0f365-fbdd-4e21-9786-da459d78dd1f.jpg" ,
+//		"brand" : "b \ u00e9b \ u00e9 confort" ,
+//		"id" : "1bf0f365-fbdd-4e21-9786-da459d78dd1f" ,
+//		"title" : "Cadeira para Iseos Automáticos B \ u00e9b \ u00e9 Confort Earth Brown"
+//		} ,
+
 	@JsonProperty("price")
 	private Double price;
 	@JsonProperty("image")
