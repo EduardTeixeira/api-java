@@ -1,54 +1,75 @@
 package br.com.apijava.entity;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "meta", "products" })
 public class Product {
 
-	@JsonProperty("meta")
-	private Meta meta;
-	@JsonProperty("products")
-	private List<Product_> products = null;
-	@JsonIgnore
-	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+	@JsonProperty("price")
+	private Double price;
 
-	@JsonProperty("meta")
-	public Meta getMeta() {
-		return meta;
+	@JsonProperty("image")
+	private String image;
+
+	@JsonProperty("brand")
+	private String brand;
+
+	@JsonProperty("id")
+	private String id;
+
+	@JsonProperty("title")
+	private String title;
+
+	@JsonProperty("reviewScore")
+	private Double reviewScore;
+
+	public Double getPrice() {
+		return price;
 	}
 
-	@JsonProperty("meta")
-	public void setMeta(Meta meta) {
-		this.meta = meta;
+	public void setPrice(Double price) {
+		this.price = price;
 	}
 
-	@JsonProperty("products")
-	public List<Product_> getProducts() {
-		return products;
+	public String getImage() {
+		return image;
 	}
 
-	@JsonProperty("products")
-	public void setProducts(List<Product_> products) {
-		this.products = products;
+	public void setImage(String image) {
+		this.image = image;
 	}
 
-	@JsonAnyGetter
-	public Map<String, Object> getAdditionalProperties() {
-		return this.additionalProperties;
+	public String getBrand() {
+		return brand;
 	}
 
-	@JsonAnySetter
-	public void setAdditionalProperty(String name, Object value) {
-		this.additionalProperties.put(name, value);
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public Double getReviewScore() {
+		return reviewScore;
+	}
+
+	public void setReviewScore(Double reviewScore) {
+		this.reviewScore = reviewScore;
 	}
 
 }

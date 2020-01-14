@@ -26,6 +26,12 @@ public class Product_ {
 //		"id" : "1bf0f365-fbdd-4e21-9786-da459d78dd1f" ,
 //		"title" : "Cadeira para Iseos Automáticos B \ u00e9b \ u00e9 Confort Earth Brown"
 //		} ,
+	
+//	Criar uma lista de vitrines com os produtos da primeira página API
+//	(http://challenge-api.luizalabs.com/api/product/?page=1) com:
+//	 - Imagem
+//	 - Nome
+//	 - Preço
 
 	@JsonProperty("price")
 	private Double price;
