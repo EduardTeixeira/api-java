@@ -20,12 +20,9 @@ public class ProductController {
 
 	@RequestMapping(path = "/list", method = RequestMethod.GET)
 	@CrossOrigin
-	public String healthTest() {
+	public List<Product> healthTest() {
 
-		List<Product> listFinal = productService.getProductsList();
-		System.out.println(listFinal);
-
-		return "pong";
+		return productService.getProductsList();
 	}
 
 }

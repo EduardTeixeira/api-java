@@ -16,7 +16,6 @@ import br.com.apijava.entity.Product;
 @Service
 public class ProductService {
 
-	// ler o JSON desse site e retornar uma classe <list>
 	public static final String URL = "http://challenge-api.luizalabs.com/api/product/?page=1";
 
 	public List<Product> getProductsList() {
@@ -79,25 +78,46 @@ public class ProductService {
 
 			for (int i = 0; i < array.length(); i++) {
 
-				if (array.length() > 0 && array != null) {
+				try {
 
-					// colocar uma verificacao aqui de valores que n existem ou nulos...
+					if (array.length() > 0 && array != null) {
 
-					Product product = new Product();
+						Product product = new Product();
 
-					product.setId(array.getJSONObject(i).getString("id"));
+						if (array.getJSONObject(i).opt("id") != null) {
+							product.setId(array.getJSONObject(i).getString("id"));
+						}
 
-					product.setPrice(array.getJSONObject(i).getDouble("price"));
+						if (array.getJSONObject(i).opt("price") != null) {
+							product.setPrice(array.getJSONObject(i).getDouble("price"));
+						}
 
-					product.setImage(array.getJSONObject(i).getString("image"));
+						if (array.getJSONObject(i).opt("image") != null) {
+							product.setImage(array.getJSONObject(i).getString("image"));
+						}
 
-					product.setBrand(array.getJSONObject(i).getString("brand"));
+						if (array.getJSONObject(i).opt("brand") != null) {
+							product.setBrand(array.getJSONObject(i).getString("brand"));
+						}
 
-					product.setTitle(array.getJSONObject(i).getString("title"));
+						if (array.getJSONObject(i).opt("title") != null) {
+							product.setTitle(array.getJSONObject(i).getString("title"));
+						}
 
-					product.setReviewScore(array.getJSONObject(i).getDouble("reviewScore"));
+						if (array.getJSONObject(i).opt("reviewScore") != null) {
+							product.setReviewScore(array.getJSONObject(i).getDouble("reviewScore"));
+						}
 
-					listProducts.add(product);
+						listProducts.add(product);
+					}
+
+				} catch (Exception e) {
+
+					e.printStackTrace();
+
+					System.out.println(e.getMessage());
+
+					continue;
 				}
 			}
 
